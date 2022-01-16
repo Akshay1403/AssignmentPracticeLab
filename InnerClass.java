@@ -1,18 +1,15 @@
-abstract class InnerClass 
-{
-	 public abstract void display();
-}
-	public class InnerClass {
+class InnerClass {
+	
+	private String message = "Hey, Raj Here";
+	class Inner {
+		void hello() {
+			System.out.println(message + ", Lets learn about Inner Class ");
+		}	
+	  }
 		
-	   public static void main(String[] args) {
-		   
-	    InnerClass i = new InnerClass() {
-	    public void display() {
-	    	
-	    System.out.println("This is an Anonymous Inner Class");
-	   }
-	 };
-	 
-	   i.display();
-	 }
-}
+	public static void main(String [] args) {
+		InnerClass obj = new InnerClass();
+		InnerClass.Inner in = obj.new Inner();
+		in.hello();
+	}	
+ }
